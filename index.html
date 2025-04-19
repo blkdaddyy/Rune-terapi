@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rune Rod Terapi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      padding: 1rem;
+      background-color: #f8f8f8;
+      gap: 1rem;
+    }
+
+    .logo img {
+      height: 60px;
+      display: block;
+    }
+
+    .menu {
+      font-size: 2.2rem;
+      cursor: pointer;
+      padding: 0.25rem 0.75rem;
+      justify-self: end;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 1rem;
+      background-color: #f0f4f8;
+    }
+
+    .hero h1 {
+      font-size: 1.6rem;
+      font-family: 'Libre Baskerville', serif;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #444;
+      margin-top: 0;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      border-radius: 8px;
+    }
+
+    .cta-button {
+      margin-top: 1.2rem;
+      display: inline-block;
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 0.75rem 1.2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .content {
+      padding: 2rem 1rem 1rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: 'Libre Baskerville', serif;
+      margin-top: 2rem;
+    }
+
+    .phone-number {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin: 1rem 0 0.25rem;
+    }
+
+    form {
+      margin-top: 1rem;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 0.75rem;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    a {
+      color: #0047ab;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .benefits, .about, .form-section {
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero img {
+        width: auto;
+        max-width: 400px;
+        margin: 1rem auto 0;
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><img src="logo.png" alt="Rune Rod Terapi"></div>
+    <div></div>
+    <div class="menu">&#9776;</div>
+  </header>
+
+  <section class="hero">
+    <h1>Genskab forbindelsen til dig selv – én samtale ad gangen</h1>
+    <p>Individuel samtaleterapi i trygge rammer – når livet er tungt, og du vil finde vej videre.</p>
+    <a href="#kontakt" class="cta-button">Book en gratis samtale</a>
+    <img src="rune.jpg" alt="Rune Rod portræt">
+  </section>
+
+  <section class="content">
+
+    <div class="benefits">
+      <h2>Psykoterapi kan hjælpe dig med:</h2>
+      <ul>
+        <li>At bearbejde følelsesmæssige problemer der udfordrer og begrænser dig i livet</li>
+        <li>At forandre fastlåste mønstre og vaner</li>
+        <li>Forbedre din evne til at håndtere konflikter og problemer i nære relationer</li>
+        <li>At skabe bedre forståelse af, hvorfor du har det som du har det</li>
+      </ul>
+    </div>
+
+    <div class="about">
+      <h2>Hvorfor vælge Rune?</h2>
+      <ul>
+        <li>✅ Tryghed og nærvær i hver samtale</li>
+        <li>✅ Fokus på dig – ikke diagnoser</li>
+        <li>✅ Online og fysisk terapi muligt</li>
+        <li>✅ Studerende – og derfor lavere pris</li>
+      </ul>
+      <p><a href="#">Læs mere om Rune &rarr;</a></p>
+    </div>
+
+    <div class="form-section" id="kontakt">
+      <h2>Tag første skridt</h2>
+      <p class="phone-number">Ring 27 28 78 33</p>
+      <p>...eller udfyld formularen, så vender jeg tilbage inden for 24 timer.</p>
+
+      <form>
+        <input type="text" placeholder="Navn" required>
+        <input type="tel" placeholder="Telefon" required>
+        <input type="email" placeholder="Email" required>
+        <textarea rows="4" placeholder="Hvad vil du gerne have hjælp med?" required></textarea>
+        <button type="submit">Send besked</button>
+      </form>
+    </div>
+
+    <div class="about">
+      <h2>I terapi hos studerende</h2>
+      <p>Som studerende på sidste del af Skolen for Eksistentiel og Oplevelsesorienteret Psykoterapis uddannelse, modtager jeg nu træningsklienter. At være i terapi hos en studerende, foregår på samme præmisser som hos en færdiguddannet, dog er prisen væsentligt lavere.</p>
+      <p><a href="#">Priser og praktisk info &rarr;</a></p>
+    </div>
+
+  </section>
+
+</body>
+</html>
