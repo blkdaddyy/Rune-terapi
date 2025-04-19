@@ -2,15 +2,13 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rune Rod Terapi</title>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --main-bg: #f6f4f1;
-      --card-bg: #ffffff;
-      --overlay: rgba(0,0,0,0.35);
-      --text-light: #ffffff;
+      --accent-bg: #f5e7dd;
       --text-dark: #1a1a1a;
       --text-muted: #777;
       --primary: #1a1a1a;
@@ -20,52 +18,189 @@
     *, *::before, *::after { box-sizing: border-box; }
     body {
       margin: 0;
-      background-color: var(--main-bg);
-      padding: 2rem 0;
       font-family: var(--font-body);
+      background-color: var(--main-bg);
       color: var(--text-dark);
-      line-height: 1.6;
+      line-height: 1.7;
       font-size: 1rem;
     }
-    a { text-decoration: none; color: inherit; }
-    .wrapper {
+    img { max-width: 100%; height: auto; }
+    a { color: var(--primary); text-decoration: none; }
+    header {
+      padding: 2rem 1.5rem;
+      max-width: 1140px;
       margin: 0 auto;
-      background: var(--card-bg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo img { height: 80px; }
+    .menu { font-size: 2rem; display: none; cursor: pointer; }
+    .hero {
+      background-color: var(--accent-bg);
+      position: relative;
+      padding: 3rem 1.5rem;
+    }
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      max-width: 700px;
+      margin: 0 auto 1.2rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #333;
+    }
+    .cta-button {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.85rem 1.75rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .hero img {
+      margin-top: 3rem;
+      max-width: 280px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    main section { margin-bottom: 3.5rem; }
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+    ul { padding-left: 1.5rem; }
+    li { margin-bottom: 0.8rem; }
+    form {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      margin-top: 1rem;
+    }
+    form label {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1.2rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      background-color: var(--primary);
+      color: white;
+      padding: 0.85rem;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding: 4rem 1.5rem 3rem;
+      border-top: 1px solid #ddd;
+      background-color: var(--main-bg);
+    }
+    footer a { color: var(--primary); }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.4rem; }
+      .logo img { height: 60px; }
+      .hero {
+      background-color: var(--accent-bg);
+      position: relative;
+      padding: 3rem 1.5rem;
+    }
+    }
+  
+    
+    /* Responsive wrapper sizes */
+    .wrapper {
+      width: 100%;
+      margin: 2rem auto;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       overflow: hidden;
     }
-    @media (max-width: 575px) {
-      .wrapper { width: 100%; }
-    }
+
     @media (min-width: 576px) {
-      .wrapper { max-width: 400px; }
+      .wrapper {
+        max-width: 400px;
+      }
     }
     @media (min-width: 768px) {
-      .wrapper { max-width: 600px; }
+      .wrapper {
+        max-width: 600px;
+      }
     }
     @media (min-width: 1024px) {
-      .wrapper { max-width: 800px; }
+      .wrapper {
+        max-width: 800px;
+      }
     }
-    /* Hero integrated */
+
+
+    body {
+      background-color: var(--main-bg);
+      padding: 2rem 0;
+    }
+
+
     .hero {
+      background-color: var(--accent-bg);
       position: relative;
-      background-image: url('rune.jpg');
-      background-size: cover;
-      background-position: center;
-      min-height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      color: var(--text-light);
+      padding: 3rem 1.5rem;
     }
-    .hero::before {
-      content: '';
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .hero-content {
       position: absolute;
-      inset: 0;
-      background: var(--overlay);
-      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+      color: white;
+      padding: 0 1rem;
+      max-width: 90%;
     }
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 1.8rem; }
+      .hero-content p { font-size: 1rem; }
+    }
+
+
+    /* Integrated hero & header */
+    .hero {
+      background-color: var(--accent-bg);
+      position: relative;
+      padding: 3rem 1.5rem;
+    }
+    
     .hero-header {
       position: relative;
       z-index: 2;
@@ -77,11 +212,6 @@
     .hero-header .logo img {
       height: 60px;
     }
-    .hero-header .menu {
-      font-size: 2rem;
-      color: var(--text-light);
-      cursor: pointer;
-    }
     .hero-content {
       position: relative;
       z-index: 2;
@@ -90,138 +220,106 @@
     }
     .hero-content h1 {
       font-family: var(--font-heading);
-      font-size: 2.2rem;
-      margin: 0 0 1rem;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
       line-height: 1.2;
-      text-align: left;
     }
     .hero-content p {
-      font-size: 1rem;
-      margin: 0 0 1.5rem;
-      text-align: left;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
     }
     .hero-content .cta-button {
-      display: inline-block;
-      background: var(--text-light);
+      background-color: #fff;
       color: var(--primary);
       padding: 0.85rem 1.5rem;
       border-radius: 5px;
       font-weight: 600;
+      text-decoration: none;
     }
-    /* Main content */
-    main {
-      padding: 3rem 1.5rem;
+
+    .portrait-block {
+      width: 280px;
+      height: 280px;
+      background-color: var(--card-bg);
+      border-radius: 15px;
+      margin: 0 auto 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
-    section {
-      margin-bottom: 2.5rem;
+    .portrait-block img {
+      width: auto;
+      max-height: 260px;
     }
-    h2 {
-      font-family: var(--font-heading);
-      font-size: 1.5rem;
-      text-align: center;
-      margin-bottom: 1rem;
+
+    .portrait-block {
+      width: 280px;
+      height: 280px;
+      background-color: var(--accent-bg);
+      border-radius: 15px;
+      margin: 0 auto 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
-    ul { padding-left: 1.2rem; }
-    li { margin-bottom: 0.8rem; }
-    form {
-      background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 8px;
-      border: 1px solid #ddd;
+    .portrait-block img {
+      width: auto;
+      max-height: 260px;
     }
-    form label {
-      display: block;
-      margin-bottom: 0.3rem;
-      font-weight: 600;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      background: var(--primary);
-      color: var(--card-bg);
-      padding: 0.85rem;
-      width: 100%;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      padding: 3rem 1.5rem;
-      border-top: 1px solid #ddd;
-      background: var(--card-bg);
-    }
-    footer a { color: var(--text-dark); }
-    @media (max-width: 768px) {
-      .hero-content h1 { font-size: 1.8rem; }
-      .hero-header .logo img { height: 50px; }
-    }
-  </style>
+</style>
 </head>
 <body>
   <div class="wrapper">
-    <section class="hero">
-      <div class="hero-header">
-        <div class="logo"><img src="logo.png" alt="Rune Rod Terapi logo"></div>
-        <div class="menu">&#9776;</div>
-      </div>
-      <div class="hero-content">
-        <h1>Genskab forbindelsen til dig selv – én samtale ad gangen</h1>
-        <p>Individuel samtaleterapi i trygge rammer – når livet er tungt, og du vil finde vej videre.</p>
-        <a href="#kontakt" class="cta-button">Book en gratis samtale</a>
+  
+  <section class="hero">
+    <h1>Genskab forbindelsen til dig selv – én samtale ad gangen</h1>
+    <p>Individuel samtaleterapi i trygge rammer – når livet er tungt, og du vil finde vej videre.</p>
+    <a href="#kontakt" class="cta-button">Book en gratis samtale</a>
+    <img src="rune.jpg" alt="Portræt af Rune Rod">
+  </section>
+  <main>
+    <section class="benefits">
+      <h2>Psykoterapi kan hjælpe dig med:</h2>
+      <ul>
+        <li>At bearbejde følelsesmæssige problemer der udfordrer og begrænser dig i livet</li>
+        <li>At forandre fastlåste mønstre og vaner</li>
+        <li>Forbedre din evne til at håndtere konflikter og problemer i nære relationer</li>
+        <li>At skabe bedre forståelse af, hvorfor du har det som du har det</li>
+      </ul>
+    </section>
+    <section class="about">
+      <h2>Hvorfor vælge Rune?</h2>
+      <ul>
+        <li>✅ Tryghed og nærvær i hver samtale</li>
+        <li>✅ Fokus på dig – ikke diagnoser</li>
+        <li>✅ Online og fysisk terapi muligt</li>
+        <li>✅ Studerende – og derfor lavere pris</li>
+      </ul>
+    </section>
+    <section class="form-section" id="kontakt">
+      <h2>Tag første skridt</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST" onsubmit="event.target.style.display='none';document.getElementById('form-success').style.display='block'; return true;">
+        <label for="name">Navn</label>
+        <input type="text" name="name" id="name" required>
+        <label for="phone">Telefon</label>
+        <input type="tel" name="phone" id="phone" required>
+        <label for="email">Email</label>
+        <input type="email" name="_replyto" id="email" required>
+        <label for="message">Hvad vil du gerne have hjælp med?</label>
+        <textarea name="message" id="message" rows="4" required></textarea>
+        <button type="submit">Kontakt mig nu</button>
+      </form>
+      <div id="form-success" style="display:none; margin-top: 1.5rem; background: #e6ffe6; padding: 1rem; border-radius: 5px; border: 1px solid #b6deb6;">
+        <strong>Tak for din besked!</strong> Jeg vender tilbage hurtigst muligt.
       </div>
     </section>
-    <main>
-      <section class="benefits">
-        <h2>Psykoterapi kan hjælpe dig med:</h2>
-        <ul>
-          <li>At bearbejde følelsesmæssige problemer der udfordrer og begrænser dig i livet</li>
-          <li>At forandre fastlåste mønstre og vaner</li>
-          <li>Forbedre din evne til at håndtere konflikter og problemer i nære relationer</li>
-          <li>At skabe bedre forståelse af, hvorfor du har det som du har det</li>
-        </ul>
-      </section>
-      <section class="about">
-        <h2>Hvorfor vælge Rune?</h2>
-        <ul>
-          <li>✅ Tryghed og nærvær i hver samtale</li>
-          <li>✅ Fokus på dig – ikke diagnoser</li>
-          <li>✅ Online og fysisk terapi muligt</li>
-          <li>✅ Studerende – og derfor lavere pris</li>
-        </ul>
-      </section>
-      <section class="form-section" id="kontakt">
-        <h2>Tag første skridt</h2>
-        <form action="https://formspree.io/f/your-form-id" method="POST" onsubmit="event.target.style.display='none';document.getElementById('form-success').style.display='block'; return true;">
-          <label for="name">Navn</label>
-          <input type="text" name="name" id="name" required>
-          <label for="phone">Telefon</label>
-          <input type="tel" name="phone" id="phone" required>
-          <label for="email">Email</label>
-          <input type="email" name="_replyto" id="email" required>
-          <label for="message">Hvad vil du gerne have hjælp med?</label>
-          <textarea name="message" id="message" rows="4" required></textarea>
-          <button type="submit">Kontakt mig nu</button>
-        </form>
-        <div id="form-success" style="display:none; margin-top: 1rem; background: #e6ffe6; padding: 1rem; border-radius: 5px; border:1px solid #b6deb6;">
-          <strong>Tak for din besked!</strong> Jeg vender tilbage hurtigst muligt.
-        </div>
-      </section>
-    </main>
-    <footer>
-      © 2025 Rune Rod Terapi · CVR: 12345678 · København<br>
-      Mail: <a href="mailto:kontakt@rune-terapi.dk">kontakt@rune-terapi.dk</a>
-    </footer>
-  </div>
+  </main>
+  <footer>
+    © 2025 Rune Rod Terapi · CVR: 12345678 · København<br>
+    Mail: <a href="mailto:kontakt@rune-terapi.dk">kontakt@rune-terapi.dk</a>
+  </footer>
+  </div> <!-- end wrapper -->
 </body>
 </html>
