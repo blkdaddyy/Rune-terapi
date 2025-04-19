@@ -8,7 +8,7 @@
   <style>
     :root {
       --main-bg: #f6f4f1;
-      --accent-bg: #f3f1ed;
+      --accent-bg: #f5e7dd;
       --text-dark: #1a1a1a;
       --text-muted: #777;
       --primary: #1a1a1a;
@@ -127,9 +127,25 @@
       .logo img { height: 60px; }
       .hero { padding: 3.5rem 1.2rem 3rem; }
     }
-  </style>
+  
+    .wrapper {
+      max-width: 400px;
+      margin: 2rem auto;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    body {
+      background-color: var(--main-bg);
+      padding: 2rem 0;
+    }
+
+</style>
 </head>
 <body>
+  <div class="wrapper">
   <header>
     <div class="logo"><img src="logo.png" alt="Rune Rod Terapi logo"></div>
     <div class="menu">&#9776;</div>
@@ -181,5 +197,6 @@
     © 2025 Rune Rod Terapi · CVR: 12345678 · København<br>
     Mail: <a href="mailto:kontakt@rune-terapi.dk">kontakt@rune-terapi.dk</a>
   </footer>
+  </div> <!-- end wrapper -->
 </body>
 </html>
