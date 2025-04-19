@@ -223,5 +223,27 @@
     © 2025 Rune Rod Terapi · CVR: 12345678 · København<br>
     Mail: <a href="mailto:kontakt@rune-terapi.dk">kontakt@rune-terapi.dk</a>
   </footer>
+
+<nav id="mobileMenu" class="mobile-menu" style="display:none; position: absolute; top: 70px; right: 1rem; background: #f9f7f4; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 1rem; z-index: 1000;">
+  <a href="#om">Om Rune</a>
+  <a href="#terapi">Om terapien</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="#info">Praktisk info</a>
+</nav>
+
+<script>
+  document.querySelector('.menu').addEventListener('click', function() {
+    const menu = document.getElementById('mobileMenu');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  });
+
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    if (!menu.contains(e.target) && !e.target.classList.contains('menu')) {
+      menu.style.display = 'none';
+    }
+  });
+</script>
 </body>
 </html>
+
